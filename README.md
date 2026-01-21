@@ -1,16 +1,27 @@
-# car_rental_application
+Here’s a sample you can use and modify:
 
-A new Flutter project.
+# Car Rental Application
 
-## Getting Started
+This is a Flutter-based Car Rental Application machine task submission.
 
-This project is a starting point for a Flutter application.
+## Features
+- Login and Sign Up
+- Car Listing with filter chips
+- Car Detail Page
+- Booking Form with Date Picker
+- Booking Confirmation Screen
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
+*(Optional: Add screenshots of your app here)*
+<img width="410" height="900" alt="image" src="https://github.com/user-attachments/assets/45902920-2268-45f2-b87b-649c07ca822a" />
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Prerequisites
+- Flutter SDK installed
+- Android Studio or VS Code
+- An emulator or real device
+
+### How to Run
+1. Clone the repository:
+```bash
+git clone https://github.com/HALEELAHAMED/car_rental_app.git
