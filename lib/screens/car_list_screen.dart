@@ -374,7 +374,6 @@ class _CarListScreenState extends State<CarListScreen>
     );
   }
 
-
   Widget _buildIconInfo(IconData icon, String text) {
     return Row(
       children: [

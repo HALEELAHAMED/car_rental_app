@@ -17,30 +17,33 @@ class CarDetailScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          Stack(
-            children: [
-              Image.asset(
-                car.image,
-                width: double.infinity,
-                height: 260.h,
-                fit: BoxFit.cover,
-              ),
-
-              Positioned(
-                top: 40.h,
-                left: 16.w,
-                child: _circleIcon(
-                  icon: Icons.arrow_back,
-                  onTap: () => Navigator.pop(context),
+          SafeArea(
+            bottom: false,
+            child: Stack(
+              children: [
+                Image.asset(
+                  car.image,
+                  width: double.infinity,
+                  height: 260.h,
+                  fit: BoxFit.cover,
                 ),
-              ),
 
-              Positioned(
-                top: 40.h,
-                right: 16.w,
-                child: _circleIcon(icon: Icons.share, onTap: () {}),
-              ),
-            ],
+                Positioned(
+                  top: 40.h,
+                  left: 16.w,
+                  child: _circleIcon(
+                    icon: Icons.arrow_back,
+                    onTap: () => Navigator.pop(context),
+                  ),
+                ),
+
+                Positioned(
+                  top: 40.h,
+                  right: 16.w,
+                  child: _circleIcon(icon: Icons.share, onTap: () {}),
+                ),
+              ],
+            ),
           ),
 
           Expanded(
@@ -49,7 +52,6 @@ class CarDetailScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  /// TITLE + PRICE
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

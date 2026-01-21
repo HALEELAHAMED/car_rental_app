@@ -31,41 +31,43 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: CustomButton(
-            text: selectedTab == 0 ? 'Login' : 'Sign Up',
-            onPressed: () {
-              if (selectedTab == 0) {
-                // LOGIN
-                if (_loginFormKey.currentState!.validate()) {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (_) => CarListScreen()),
-                  );
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            child: CustomButton(
+              text: selectedTab == 0 ? 'Login' : 'Sign Up',
+              onPressed: () {
+                if (selectedTab == 0) {
+                  // LOGIN
+                  if (_loginFormKey.currentState!.validate()) {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (_) => CarListScreen()),
+                    );
+                  }
+                } else {
+                  // SIGN UP
+                  if (_signupFormKey.currentState!.validate()) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        backgroundColor: AppColors.gold,
+                        content: Text('Sign up successful. Please login'),
+                      ),
+                    );
+          
+                    setState(() {
+                      selectedTab = 0;
+                    });
+          
+                    _fullNameCtrl.clear();
+                    _emailCtrl.clear();
+                    _mobileCtrl.clear();
+                    _passwordCtrl.clear();
+                    _confirmPasswordCtrl.clear();
+                  }
                 }
-              } else {
-                // SIGN UP
-                if (_signupFormKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      backgroundColor: AppColors.gold,
-                      content: Text('Sign up successful. Please login'),
-                    ),
-                  );
-
-                  setState(() {
-                    selectedTab = 0;
-                  });
-
-                  _fullNameCtrl.clear();
-                  _emailCtrl.clear();
-                  _mobileCtrl.clear();
-                  _passwordCtrl.clear();
-                  _confirmPasswordCtrl.clear();
-                }
-              }
-            },
+              },
+            ),
           ),
         ),
       ),
